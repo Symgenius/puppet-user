@@ -36,9 +36,9 @@
 # Copyright 2013 Your name here, unless otherwise noted.
 #
 class user {
-  $myuser = hiera('user::pn-admin')
-  $mykey = hiera('sshkey::pn-admin')
-  $mygroup = hiera('group::pn-admin')
+  $myuser = hiera_hash('user::pn-admin')
+  $mykey = hiera_hash('sshkey::pn-admin')
+  $mygroup = hiera_hash('group::pn-admin')
   create_resources(user, $myuser)
   create_resources(ssh_authorized_key, $mykey)
   create_resources(group, $mygroup)
